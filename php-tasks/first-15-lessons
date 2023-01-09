@@ -1,0 +1,181 @@
+<?php
+  /* print an output : echo  / print 
+  --Case-Insensitive */
+  echo 'i love php'; 
+  echo '<br>';
+  PRINT 'i love php';
+  echo "<br>" ;
+
+  // make a comment 
+  #single line comment
+  //single line comment
+  /* 
+   line 1
+   line 2
+  */
+
+  // get the type of variable :gettype () 
+  echo gettype(true); // boolean
+  echo '<br>';
+  echo gettype(false); // boolean 
+  echo '<br>';
+  echo gettype(100); // int
+  echo '<br>';
+  echo gettype(-200); // int
+  echo '<br>';
+  echo gettype(100.5); // double
+  echo '<br>';
+  echo gettype("mosaad"); // string
+  echo '<br>';
+  echo gettype('mosaad'); // // string
+  echo '<br>';
+  echo gettype(array("eg">="egypt" , "ksa" <= "suadi arabia")); // array
+  echo '<br>';
+  echo gettype(array("egypy" , "suadi arabia" )); // array
+  echo '<br>';
+  echo gettype(["egypt" , "suadi arabia"]); // array
+  echo '<br>';
+
+  //  Type Juggling And Automatic Type Conversion
+  echo true ; // 1
+  echo "<br>" ;
+  echo gettype(true) ; // boolean
+  echo "<br>" ;
+  echo true + true; // 1 + 1 = 2
+  echo '<br>';
+  echo gettype(true +true); // integar
+  echo'<br>';
+  echo 5 + '5 lesson' ; // 10 => warning( non-numeric value)
+  echo '<br>';
+  echo gettype(5 + '5 lesson'); // integar => warning(non-numeric value)
+  echo "<Br>" ;
+
+  // Type Casting : (int) 
+  echo 10 + 10.5 ; // 20.5
+  echo '<br>' ;
+  echo gettype(10 + 10.5) ; // double
+  echo '<br>' ;   
+  echo 10 + (int) 10.5 ; //20
+  echo '<br>' ;
+  echo gettype((int) 10.5 +10.5 ); // double
+  echo '<br>' ;
+  echo (int) 10.5 + (int)10.5 ; // 20
+  echo '<br>' ;
+  echo gettype((int) 10.5 + (int)10.5); // integar
+  echo '<br>' ;
+  echo((int) (10.5 + 10.5)) ; // 21
+  echo '<br>' ;
+  echo gettype((int)(10.5 + 10.5)) ; //integar
+  echo '<br>';
+
+  /* Boolean And Converting To Boolean
+  var_dum : dumps information about one or more variables */
+  var_dump( (bool) " ") ; // false
+  echo '<br>' ;
+  var_dump((bool)"0"); // false
+  echo '<br>' ;
+  var_dump((bool)array()); // false
+  echo '<br>' ;
+  var_dump((bool)[]); // false
+  echo '<br>' ;
+  var_dump((bool) 0); // false
+  echo '<br>' ;
+  var_dump((bool)"zero"); // true
+  echo '<br>' ;
+  var_dump((bool) array(0,1,2)); // true
+  echo '<br>' ;
+   
+  // string and escaping : \ 
+  echo "hello php"; // hello php
+  echo '<br>';
+  echo 'hello php'; // hello php
+  echo '<br>' ;
+  echo 'hello "php"' ; // hello "php"
+  echo '<br>' ;
+  echo "hello 'php'" ; // hello 'php'
+  echo '<br>' ;
+  echo 'hello \'php \'' ; // hello 'php'
+  echo '<br>' ; 
+  echo "hello \"php \"" ; // hello "php" 
+  echo '<br>' ;
+  echo "hello php \\"; // hello php \
+  echo '<br>' ;
+  // print in multiple lines : nl2br
+  echo "hello php 
+  in multiple lines"; // hello php in multiple lines
+  echo '<br>';
+  echo nl2br('hello php 
+  in multiple 
+  lines');
+  echo'<br>' ;
+
+  // Heredoc and Nowdoc are used in escabing
+  // Heredoc : escape and parsing
+  $name2 = "mosaad" ;
+  echo <<<"Here"
+  Hello PHP
+  Special Characters $$$ ' ' ' """"" \\\\ 
+  Hello My Name Is $name2
+  Here; //  Hello PHP Special Characters $$$ ' ' ' """"" \\ Hello My Name Is mosaad
+  echo '<br>';
+  // Nowdoc : escaping only
+  echo <<<'Now'
+  Hello PHP
+  Special Characters $$$ ' ' ' """"" \\\\
+  Hello My Name Is $name2
+  Now; // Hello PHP Special Characters $$$ ' ' ' """"" \\\\ Hello My Name Is $name2
+
+  //  Array With Complex Tests
+  echo '<pre>';
+  print_r([
+    "a"=> "sameh",
+    "b"=> "omar",
+    0 => "mohamed",
+    7 =>"amr",
+    "ali" ,
+    true => "mahmoud", 
+    "1" => "sherif",
+    "10" => "sayed",
+    false => "ahmad",
+    "gamal",
+    "names" => [
+     "mostafa",
+     "mosaad",
+     "sayed"=> [
+       0,
+       1,
+       2]
+     ]
+    ]);
+    echo '</pre>';
+  echo '<br>';
+
+  /* Variables And Naming Rules : $
+   Naming Rules + Info
+    [1] Start With Dollar Sign $
+    [2] Start With A Letter [a-z] Or [A-Z] Or Underscore
+    [3] You Can Use Numbers Inside The Name
+    [4] No Special Characters Allowed
+    [5] Case Sensitive
+    - Test Single And Double Quotes */
+  $username = 'mosaad'; 
+  echo $username ; // hello mosaad
+  echo'<br>';
+  echo 'hello $username'; // hello $username
+  echo'<br>';
+  echo "hello $username" ; // hello mosaad
+  echo'<br>';
+
+  // variable variable : $ $variable
+  $a = 'mostafa';
+  $$a = 'mosaad'; 
+  echo $a ; // mostafa
+  echo '<br>';
+  echo $$a ; // mosaad
+  echo '<br>';
+  echo "hello $a"; // hello mostafa
+  echo '<br>';
+  echo "hello $$a"; // hello $mostafa
+  echo '<br>';
+  echo "hello ${$a}"; // hello mosaad : $$a
+  echo '<br>';

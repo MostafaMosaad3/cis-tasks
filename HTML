@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+<title> book store </title>   
+<meta charset = "UTF_8" />  
+<meta name = "describtion" content ="this is my book store" />
+</head>
+<body>
+<!-- h1 _ h6  -->
+<h1> book store </h1>
+ <!--
+    b => Bold
+    strong => Bold => Important Text
+    i => Italic
+    em => Emphasized
+    mark => Marked Text Or Highlighted Text
+    u => Underline
+    small => Smaller text
+    del => Deleted Text
+    ins => Inserted Text
+    sub => Subscript
+    sup => Superscript
+ -->
+ <p> this is my<b> book store</b> welcome </p> 
+ <p> this is my <strong> book store</strong> welcome</p>
+ <p> this is my <i> book store</i> welcome</p> 
+ <p> this is my<em> book store </em>welcome</p> 
+ <p> this is my<mark> book store</mark> welcome</p> 
+ <p> this is my<u> book store</u> welcome</p> 
+ <p> this is my<small> book store</small> welcome</p> 
+ <p> this is my<del> book store</del> welcome</p> 
+ <p> <deL> 100 $</deL> 80$</p>
+ <p> this is my <insert>book store </insert>welcome</p> 
+ <p> h <sub> 2</sub> o</p>
+ <p> h <sup> 2</sup> o</p>
+
+<!-- Links – Anchor Tag-->
+<a href ="https://google.com" target = "-blank" title = "go to google "> google</a> 
+<a href ="https://facebook.com"  title = "go to facebook "> face book</a> 
+
+<!--Image And Deal With Paths-->
+<img src="1.jpg" alt = " ">
+<img src="images/2.jpg" alt = " ">
+
+<!-- Lists – Ul, Ol, DL
+  ul => unorderd list 
+  ol => ordered list
+  dl => describtion list -->
+ <ul>
+  <li>html</li>
+  <li>css</li>
+  <li>js
+   <ul>
+      <li>react</li>
+      <li>angular</li>
+      <li>vuejs</li>
+   </ul>
+  </li>
+ </ul>
+<!--separator  -->
+<!--
+  reversed => Reverse The Ordering
+  start => Start From Position
+  type => Type Of Ordering
+-->
+ <ol>
+   <li valu=" 50" >name</li>
+   <li>address</li>
+   <li>id</li>
+ </ol>  
+<!-- Separator -->
+<!--
+ dl => Description List
+ dt => Term
+ dd => Description Term
+ --> 
+ <dl>
+<dt>html</dt>
+<dd>language of the web</dd>
+<dt>css</dt>
+<dd>language of visuals</dd>
+ </dl>
+
+<!-- table -->
+<!--
+  t head
+  t body 
+  t foot
+  th => table head cell
+  td => table data cell
+  tr => table row
+-->
+<table border = "1" >
+ <caption>
+ student marks  
+ </caption>  
+<tr>
+   <th>first name</th>
+   <th>last name</th>
+   <th>marks</th>
+</tr>
+<tr>
+   <td>ahmad</td>
+   <td>ali</td>
+   <td>50</td>
+</tr>
+<tr>
+   <td>omar</td>
+   <td>mohamed</td>
+   <td>40</td>
+</tr>
+<tr>
+   <td>sayed</td>
+   <td>mahmoud</td>
+   <td>60</td>
+</tr>   
+<tr>
+   <td colspan = "2">total</td>
+   <td>150</td>
+</tr>
+</table>
+
+<!-- spam : an inline container used to mark up a part of a text -->
+<p> this is <spam>my</spam> book store ,welcome </p>
+<!-- br : produces a line break in text -->
+<p>this is my second paragraph <br> test <br>test </p>
+<!-- hr : displayed as a horizontal rule -->
+<hr>
+<p>this is my second paragrah </p>
+
+<!-- div as a container -->
+<div class = "romantic">
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>100</spam>   
+</div>    
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>50</spam> 
+</div>
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>70</spam> 
+</div>
+</div>
+<hr>
+<div class = "stories">
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>100</spam>   
+</div>    
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>50</spam> 
+</div>
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>70</spam> 
+</div>
+</div>
+<hr>
+<div class = "romantic">
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>100</spam>   
+</div>    
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>50</spam> 
+</div>
+<div class = "book">
+<h3>book title</h3>   
+<p>book describtion</p>   
+<spam>70</spam> 
+</div>
+</div>   
+
+<!-- entities &; -->
+<div>this is my book store <p> </div>
+<div>this is my book store &lt;p&gt;  </div>
+
+<!-- semantic elements  -->
+<header>
+logo 
+<ul>
+ <li>home</li>   
+ <li>about</li>   
+ <li>services</li>   
+ <li>contact us </li>   
+</ul>
+</header>
+<hr>
+<nav>
+<ul>
+ <li>link</li>  
+ <li>link</li>  
+ <li>link</li>  
+ <li>link</li>  
+</ul>   
+</nav>
+<hr>
+<section>
+ <figure>
+  <img src="1.jpg" alt = ""> 
+  <figcaption> caption</figcaption>
+ </figure>
+</section>
+<aside>
+   side bar
+</aside>
+<hr>
+<footer>
+   footer
+</footer>
+
+<!-- audio and video -->
+<audio controls autoplay loop muted>
+  <source src=" "   type="  " > 
+  <source src=" "   type="  " > 
+  <source src=" "   type="  " > 
+  your browser doesn't support audio tags
+</audio>
+<hr>
+<video controls autoplay loop muted poster="  ">
+  <source src=" " type=" " >
+  <source src=" " type=" " >
+  your browser doesn't support video tags
+  <track src=" " kind=" " srclang=" " label=" ">
+  <track src=" " kind=" " srclang=" " label=" ">
+</video>
+<hr>
+
+<!-- form -->
+<form action=" " method="get" novalidate target="blank">
+<input type="hidden" value="mosaad">
+<div>
+ <label>username</label>
+ <input type="text" required  placeholder="username" name="user" value="mosaad" readonly>
+</div>
+<br>
+<div>
+ <label>subject</label>
+ <input type="text" required name="subject" autofocus>
+</div>
+<br>
+<div>
+ <label>password</label>
+ <input type="password" required  placeholder="write a strong password" name="password" minlength="5" maxlength="10">
+</div>
+<br>
+<div>
+ <input type="email" required placeholder="write your email" value="gferf@fdsf" name="mail" disabled>
+</div>
+<br>
+<div>
+   <label>color</label>
+   <input type="color" name="color" >
+</div>
+<br>
+<div>
+   <label>range</label>
+   <input type="range" name="range" min="0" max="100" step="10" value="10" >
+</div>
+<br>
+<div>
+   <label>number</label>
+   <input type="number" name="number" min="0" max="100" step="10"  >
+</div>
+<br>
+<div>
+   <input id="win"  type="radio" value="windows" name="os">
+   <label for="win">windows</label>
+</div>
+<div>
+   <input id="lin" type="radio" value="linux" name="os">
+   <label for="lin">linux</label>
+</div>
+<div>
+   <input id="mac" type="radio" value="mac" name="os">
+   <label for="mac">mac</label>
+</div>
+<br>
+<input id="win1" type="checkbox" value="windows" name="os">
+<label for="win1">windows</label>
+</div>
+<div>
+<input id="lin1" type="checkbox" value="linux" name="os">
+<label for="lin1">linux</label>
+</div>
+<div>
+<input id="mac1" type="checkbox" value="mac" name="os">
+<label for="mac1">mac</label>
+</div>
+<br>
+<label for="book">choose book:</label>
+<select name="book" id="book">
+ <optgroup label="romantic">
+  <option value="1">book1</option>
+  <option value="2">book2</option>
+  <option value="3" selected>book3</option>
+ </optgroup>
+ <optgroup label="policies">
+  <option value="4">book4</option>
+  <option value="5">book5</option>
+  <option value="6">book6</option>
+ </optgroup>
+</select>
+<hr>
+<textarea name="textarea" cols="20" rows="20" placeholder="write here"></textarea>
+<hr>
+<div>
+   <label>upload</label>
+   <input type="file" >
+</div>
+<hr>
+<div>
+   <label>search</label>
+   <input type="search" >
+</div>
+<hr>
+<div>
+   <label>url</label>
+   <input type="url" >
+</div>
+<hr>
+<div>
+   <label>date</label>
+   <input type="date" >
+</div>
+<hr>
+<div>
+   <label>month</label>
+   <input type="month" >
+</div>
+<hr>
+<div>
+   <label>time</label>
+   <input type="time" >
+</div>
+<hr>
+<div>
+   <input list="programming" name="prog">
+   <datalist id="programming" >
+      <option value="python "></option>
+      <option value="c# "></option>
+      <option value="c++ "></option>
+      <option value="css "></option>
+      <option value="js "></option>
+   </datalist>
+</div>
+<div>
+   <input type="submit" value="submit" >
+</div>
+<div>
+   <input type="reset" value="reset" >
+</div>
+<br>
+</form>
+</body>
+</html>

@@ -1,0 +1,1057 @@
+<?php
+  /* print an output : echo  / print 
+  --Case-Insensitive */
+  echo 'i love php'; 
+  echo '<br>';
+  PRINT 'i love php';
+  echo "<br>" ;
+
+  // make a comment 
+  #single line comment
+  //single line comment
+  /* 
+   line 1
+   line 2
+  */
+
+  // get the type of variable :gettype () 
+  echo gettype(true); // boolean
+  echo '<br>';
+  echo gettype(false); // boolean 
+  echo '<br>';
+  echo gettype(100); // int
+  echo '<br>';
+  echo gettype(-200); // int
+  echo '<br>';
+  echo gettype(100.5); // double
+  echo '<br>';
+  echo gettype("mosaad"); // string
+  echo '<br>';
+  echo gettype('mosaad'); // // string
+  echo '<br>';
+  echo gettype(array("eg">="egypt" , "ksa" <= "suadi arabia")); // array
+  echo '<br>';
+  echo gettype(array("egypy" , "suadi arabia" )); // array
+  echo '<br>';
+  echo gettype(["egypt" , "suadi arabia"]); // array
+  echo '<br>';
+
+  //  Type Juggling And Automatic Type Conversion
+  echo true ; // 1
+  echo "<br>" ;
+  echo gettype(true) ; // boolean
+  echo "<br>" ;
+  echo true + true; // 1 + 1 = 2
+  echo '<br>';
+  echo gettype(true +true); // integar
+  echo'<br>';
+  echo 5 + '5 lesson' ; // 10 => warning( non-numeric value)
+  echo '<br>';
+  echo gettype(5 + '5 lesson'); // integar => warning(non-numeric value)
+  echo "<Br>" ;
+
+  // Type Casting : (int) 
+  echo 10 + 10.5 ; // 20.5
+  echo '<br>' ;
+  echo gettype(10 + 10.5) ; // double
+  echo '<br>' ;   
+  echo 10 + (int) 10.5 ; //20
+  echo '<br>' ;
+  echo gettype((int) 10.5 +10.5 ); // double
+  echo '<br>' ;
+  echo (int) 10.5 + (int)10.5 ; // 20
+  echo '<br>' ;
+  echo gettype((int) 10.5 + (int)10.5); // integar
+  echo '<br>' ;
+  echo((int) (10.5 + 10.5)) ; // 21
+  echo '<br>' ;
+  echo gettype((int)(10.5 + 10.5)) ; //integar
+  echo '<br>';
+
+  /* Boolean And Converting To Boolean
+  var_dum : dumps information about one or more variables */
+  var_dump( (bool) " ") ; // false
+  echo '<br>' ;
+  var_dump((bool)"0"); // false
+  echo '<br>' ;
+  var_dump((bool)array()); // false
+  echo '<br>' ;
+  var_dump((bool)[]); // false
+  echo '<br>' ;
+  var_dump((bool) 0); // false
+  echo '<br>' ;
+  var_dump((bool)"zero"); // true
+  echo '<br>' ;
+  var_dump((bool) array(0,1,2)); // true
+  echo '<br>' ;
+   
+  // string and escaping : \ 
+  echo "hello php"; // hello php
+  echo '<br>';
+  echo 'hello php'; // hello php
+  echo '<br>' ;
+  echo 'hello "php"' ; // hello "php"
+  echo '<br>' ;
+  echo "hello 'php'" ; // hello 'php'
+  echo '<br>' ;
+  echo 'hello \'php \'' ; // hello 'php'
+  echo '<br>' ; 
+  echo "hello \"php \"" ; // hello "php" 
+  echo '<br>' ;
+  echo "hello php \\"; // hello php \
+  echo '<br>' ;
+  // print in multiple lines : nl2br
+  echo "hello php 
+  in multiple lines"; // hello php in multiple lines
+  echo '<br>';
+  echo nl2br('hello php 
+  in multiple 
+  lines');
+  echo'<br>' ;
+
+  // Heredoc and Nowdoc are used in escabing
+  // Heredoc : escape and parsing
+  $name2 = "mosaad" ;
+  echo <<<"Here"
+  Hello PHP
+  Special Characters $$$ ' ' ' """"" \\\\ 
+  Hello My Name Is $name2
+  Here; //  Hello PHP Special Characters $$$ ' ' ' """"" \\ Hello My Name Is mosaad
+  echo '<br>';
+  // Nowdoc : escaping only
+  echo <<<'Now'
+  Hello PHP
+  Special Characters $$$ ' ' ' """"" \\\\
+  Hello My Name Is $name2
+  Now; // Hello PHP Special Characters $$$ ' ' ' """"" \\\\ Hello My Name Is $name2
+
+  //  Array With Complex Tests
+  echo '<pre>';
+  print_r([
+    "a"=> "sameh",
+    "b"=> "omar",
+    0 => "mohamed",
+    7 =>"amr",
+    "ali" ,
+    true => "mahmoud", 
+    "1" => "sherif",
+    "10" => "sayed",
+    false => "ahmad",
+    "gamal",
+    "names" => [
+     "mostafa",
+     "mosaad",
+     "sayed"=> [
+       0,
+       1,
+       2]
+     ]
+    ]);
+    echo '</pre>';
+  echo '<br>';
+
+  /* Variables And Naming Rules : $
+   Naming Rules + Info
+    [1] Start With Dollar Sign $
+    [2] Start With A Letter [a-z] Or [A-Z] Or Underscore
+    [3] You Can Use Numbers Inside The Name
+    [4] No Special Characters Allowed
+    [5] Case Sensitive
+    - Test Single And Double Quotes */
+  $username = 'mosaad'; 
+  echo $username ; // hello mosaad
+  echo'<br>';
+  echo 'hello $username'; // hello $username
+  echo'<br>';
+  echo "hello $username" ; // hello mosaad
+  echo'<br>';
+
+  // variable variable : $ $variable
+  $a = 'mostafa';
+  $$a = 'mosaad'; 
+  echo $a ; // mostafa
+  echo '<br>';
+  echo $$a ; // mosaad
+  echo '<br>';
+  echo "hello $a"; // hello mostafa
+  echo '<br>';
+  echo "hello $$a"; // hello $mostafa
+  echo '<br>';
+  echo "hello ${$a}"; // hello mosaad : $$a
+  echo '<br>';
+
+  // assign value by reference : &
+  $a1 = 'mostafa' ;
+  $b1 = 'mosaad' ;
+  echo $a1 ; // mostafa
+  echo '<br>' ;
+  echo $b1 ; // mosaad
+  echo '<br>' ;
+  $b1 = &$a1 ;
+  echo $b1 ; // mostafa
+  echo '<br>' ;
+
+  // constant : define Constants Always Uppercase
+  define("DB_NAME", "php");
+  define("MAIN_NUMBER", 5);
+  echo DB_NAME ; //php
+  echo '<br>' ;
+  echo MAIN_NUMBER ; // 5 
+  echo '<br>' ;
+
+  /* predefined and magic constants
+  Pre-Defined Constants [Case Sensitive]
+  - PHP_VERSION
+  - PHP_OS_FAMILY
+  - PHP_INT_MAX
+  - DEFAULT_INCLUDE_PATH */
+  echo PHP_VERSION ;
+  echo '<br>' ;
+  // Magic Constants [Case Insensitive]
+  echo __line__ ; // the line number
+  echo '<br>' ;
+  echo __file__ ; // the file name
+  echo '<br>' ;
+  echo __dir__ ; // the directory
+  echo '<br>' ;
+  // Reserved Keywords
+  /*define('BREAK' , 4);
+  echo BREAK ; */
+  define('BREAKS' , 4);
+  echo BREAKS ;
+  echo '<br>' ;
+  /*define('CLONE' , 4);
+  echo CLONE ; */
+  define('CLONES' , 4);
+  echo CLONES ;
+  echo '<br>' ;
+
+  /*Arithmetic Operators
+  - $a [+]  $b => Addition
+  - $a [-]  $b => Subtraction
+  - $a [*]  $b => Multiplication
+  - $a [/]  $b => Division
+  - $a [%]  $b => Modulus
+  - $a [**] $b => Exponentiation
+  - +$a        => Identity
+  - -$a        => Negation
+*/
+// addition
+echo 10 + 20;
+echo '<br>';
+echo gettype(10 + 20);
+echo '<br>';
+echo 9.5 + 20.5;
+echo '<br>';
+echo gettype(9.5 + 20.5);
+echo '<br>';
+// subtraction
+echo 10 - 20;
+echo '<br>';
+echo gettype(10 - 20);
+echo '<br>';
+echo 9.5 - 20.5;
+echo '<br>';
+echo gettype(9.5 - 20.5);
+echo '<br>';
+// multiplication
+echo 10 * 20;
+echo '<br>';
+echo gettype(10 * 20);
+echo '<br>';
+echo 9.5 * 20.5;
+echo '<br>';
+echo gettype(9.5 * 20.5);
+echo '<br>';
+// division
+echo 20 / 10;
+echo '<br>';
+echo gettype(20 / 10);
+echo '<br>';
+echo 20 / 8;
+echo '<br>';
+echo gettype(20 / 8);
+echo '<br>';
+// modulus
+echo 21 % 10; // Remove 1 To Become 20
+echo '<br>';
+echo 23 % 10; // Remove 3 To Become 20
+echo '<br>';
+echo 29 % 10; // Remove 9 To Become 20
+echo '<br>';
+echo 30 % 10;
+echo '<br>';
+// exponent
+echo 2 ** 4;
+echo '<br>';
+echo 2 * 2 * 2 * 2;
+echo '<br>';
+echo 3 ** 5;
+echo '<br>';
+echo 3 * 3 * 3 * 3 * 3;
+echo '<br>';
+// identity
+echo "100";
+echo '<br>';
+echo gettype("100");
+echo '<br>';
+echo +"100";
+echo '<br>';
+echo gettype(+"100");
+echo '<br>';
+// negation
+echo "-100";
+echo '<br>';
+echo gettype("-100");
+echo '<br>';
+echo -"-100";
+echo '<br>';
+echo gettype(-"-100");
+echo '<br>';
+
+/*Assignment Operators
+    - $a [+=]  $b => Addition
+    - $a [-=]  $b => Subtraction
+    - $a [*=]  $b => Multiplication
+    - $a [/=]  $b => Division
+    - $a [%=]  $b => Modulus
+    - $a [**=] $b => Exponentiation
+*/
+$a2 = 10;
+// $a = $a + 20;
+$a2 += 20;
+$b2 = 20;
+// $b = $b - 5;
+$b2 -= 5;
+$c = 4;
+// $c = $c ** 4;
+$c **= 4;
+echo $a2;
+echo '<br>';
+echo $b2;
+echo '<br>';
+echo $c;
+echo '<br>' ;
+
+/* Comparison Operators
+    - Part 1
+    - ==    => Equal
+    - !=    => Not Equal
+    - <>    => Not Equal
+    - ===   => Identical
+    - !==   => Not Identical
+  */
+  // Test Equal
+var_dump(100 == 100);
+echo '<br>';
+var_dump(100 == "100");
+echo '<br>';
+var_dump(100.0 == "100");
+echo '<br>';
+var_dump(100.0 != "100");
+echo '<br>';
+var_dump(100.0 <> "100");
+echo '<br>';
+// Test Identical
+var_dump(100 === 100);
+echo '<br>';
+var_dump(100 === "100");
+echo '<br>';
+var_dump(100.0 === "100"); 
+echo '<br>';
+var_dump(100.0 === 100);
+echo '<br>';
+var_dump(100.0 !== "100");
+echo '<br>';
+var_dump(100.0 !== 100);
+echo '<br>' ;
+/* Part 2
+    - >     => Larger Than
+    - >=    => Larger Than Or Equal
+    - <     => Smaller Than
+    - <=    => Smaller Than Or Equal
+    - <=>   => Spaceship [Less Than, Equal Or Greater]
+*/
+var_dump(100 > 50);
+echo '<br>';
+var_dump(100 > 100);
+echo '<br>';
+var_dump(100 >= 100);
+echo '<br>';
+var_dump(100 >= 110);
+echo '<br>';
+var_dump(100 < 50);
+echo '<br>';
+var_dump(100 <= 50);
+echo '<br>';
+var_dump(100 <=> 200); // -1
+echo '<br>';
+var_dump(100 <=> 100); // 0
+echo '<br>';
+var_dump(100 <=> 50); // 1
+echo '<br>' ;
+
+// increment and decrement operators
+$k = 0;
+echo $k--; // 0
+echo '<br>';
+echo $k; // -1
+echo '<br>';
+$l = 0;
+echo --$l; // -1
+echo '<br>';
+echo $l; // -1 
+echo '<br>';
+  
+/*Logical Operators
+   Compare Conditions
+  and => And => Two Are True
+  &&  => And => Two Are True ["&&" Has A Greater Precedence Than "and"]
+  or  => Or  => One Or Both Is True
+  ||  => Or  => One Or Both Is True ["||" Has A Greater Precedence Than "or"]
+  xor => Xor => One Is True But Not Both
+  !   => Not => Not True
+  */
+var_dump(100 > 50 and 100 > 80 and 100 > 90); // True
+echo '<br>';
+var_dump(100 > 50 && 100 > 80 && 100 > 100); // False
+echo '<br>';
+var_dump(100 > 50 or 100 > 110 or 100 > 100); // True
+echo '<br>';
+var_dump(100 > 50 xor 100 > 80);
+echo '<br>' ;
+ 
+/*String Operators
+ - Concatenate Strings
+ .
+ .=
+ */
+
+define("ELZERO", "1");
+$a3 = "Elzero";
+$b3 = "Web";
+$c3 = "School";
+echo "$a3 $b3 $c3";
+echo '<br>';
+echo "{$a3} {$b3} {$c3}";
+echo '<br>';
+echo $a3 . " " . $b3 . " " . $c3;
+echo '<br>';
+echo "{$a3} {$b3} {$c3} " . ELZERO . " " . testing();
+echo '<br>';
+function testing() {
+ return 1;
+}
+$x = "Elzero ";
+$x .= "Web"; // $x = $x . "Web" => Elzero Web
+$x .= " School"; // $x = $x . "School" => Elzero Web School
+echo $x;
+echo '<br>';
+
+/*Array Operators
+ - Deal With Arrays
+ +     => Union
+ ==    => Equal => Same Key And Value
+ !=    => Not Equal
+ <>    => Not Equal
+ ===   => Identical => Same Key And Value, Same Order, Same Type
+ !==   => Not Identical
+ */
+$arr1 = [1 => "A", 2 => "B"];
+$arr2 = [3 => "C", 4 => "D"];
+$arr3 = $arr1 + $arr2;
+echo '<pre>';
+print_r($arr1 + $arr2);
+print_r($arr3);
+echo '</pre>';
+$arr4 = [1 => "10", 2 => "20"];
+$arr5 = [2 => 20, 1 => 10];
+var_dump($arr4 == $arr5); // True
+echo '<br>';
+var_dump($arr4 != $arr5); // False
+echo '<br>';
+var_dump($arr4 <> $arr5); // False
+echo '<br>';
+$arr6 = [1 => 100, 2 => 200];
+$arr7 = [1 => 100, 2 => 200];
+var_dump($arr6 === $arr7); // Give Me True
+echo "<br>";
+
+/*  Error Control Operator
+ - Control The Errors
+
+ @
+ - Variable
+ - File
+ - Include
+ */
+ // Variable
+$a = 10;
+$b = @$a or die("Variable Not Found");
+echo "Test $b";
+echo '<br>';
+// File
+$f = @file("mosaad.txt") or die("File Not Found");
+echo '<pre>';
+print_r($f);
+echo '</pre>';
+echo '<br>';
+// Include
+(@include("mosaad.php")) or die("Include File Not Found");
+echo "<br>";
+
+/*Operator Precedence
+ - "||" Has A Greater Precedence Than "or"
+ - "&" Has A Greater Precedence Than "and"
+*/
+
+echo 2 + 4 * 5; // 22
+echo '<br>';
+echo (2 + 4) * 5; // 30
+echo '<br>';
+echo 10 || false || 0 || [] || ""; // True => 1
+echo '<br>';
+echo true; // 1
+echo '<br>';
+var_dump(10 || false || 0 || [] || ""); // True
+echo '<br>';
+echo 10 || false; // 1
+echo '<br>';
+$a7 = 10 || false; // $a = (10 || false) => $a = 1
+echo $a7; // 1
+echo '<br>';
+$b7 = 10 or false; // ($b = 10) or false
+echo $b7; // 10
+
+// if condition
+if (10 > 10) {
+  echo "First Condition";
+} elseif (10 > 10) {
+  echo "Second Condition";
+} else {
+  echo "No";
+}
+// If, Else
+$title = "";
+if ($title == "") {
+  echo "Unknown Page";
+} else {
+  echo $title;
+}
+echo '<br>';
+// If, Elseif, Else
+$lang = "Elzero";
+if ($lang == "Arabic") {
+  echo 'مرحبا';
+} elseif ($lang == "English") {
+  echo 'Hello';
+} elseif ($lang == "Spanish") {
+  echo 'Hola';
+} else {
+  echo 'Unknown Language';
+}
+
+// alternative syntax
+if (10 > 5) {
+  echo "Good";
+} else {
+  echo "Bad";
+}
+echo "<br>";
+if (10 > 10) echo "Good";
+else echo "Bad";
+echo "<br>";
+if (10 > 10)
+  echo "Good";
+else
+  echo "Bad";
+echo "<br>";
+if (10 > 10) echo "Good"; else echo "Bad";
+
+// nested if
+$name = "Osama";
+  $is_student = true;
+  $is_orphan = true;
+  $country = "Egypt";
+  $country_discount = 50;
+  $price = 100;
+  $student_discount = 10;
+  $orphan_discount = 15;
+
+  if ($country == "Egypt") {
+
+    if ($is_student == true) {
+
+      if ($is_orphan == true) {
+
+        echo "Hello $name";
+        echo "<br>";
+        echo "Country Discount $country_discount";
+        echo "<br>";
+        echo "Student Discount $student_discount";
+        echo "<br>";
+        echo "Orphan Discount $orphan_discount";
+        echo "<br>";
+        echo "The Final Price Is " . $price - $country_discount - $student_discount - $orphan_discount;
+
+      } else {
+
+        echo "Hello $name";
+        echo "<br>";
+        echo "Country Discount $country_discount";
+        echo "<br>";
+        echo "Student Discount $student_discount";
+        echo "<br>";
+        echo "The Final Price Is " . $price - $country_discount - $student_discount;
+
+      }
+
+    } else {
+
+      echo "Hello $name";
+      echo "<br>";
+      echo "Country Discount $country_discount";
+      echo "<br>";
+      echo "The Final Price Is " . $price - $country_discount;
+
+    }
+
+  } else {
+
+    echo "Hello $name";
+    echo "<br>";
+    echo "No Discount";
+    echo "<br>";
+    echo "The Final Price Is $price";
+
+  }
+
+// short if
+$a = 10;
+if ($a > 8) {
+  echo "Good";
+} else {
+  echo "Bad";
+}
+// Condition ? True : False;
+echo $a > 8 ? "Good" : "Bad";
+echo '<br>';
+echo "I Love PHP Because Its A ";
+if ($a > 8) {
+  echo "Good";
+} else {
+  echo "Bad";
+}
+echo " Language";
+echo '<br>';
+echo "I Love PHP Because Its A " . ($a > 8 ? "Good" : "Bad") . " Language";
+echo '<br>';
+$result = $a > 8 ? "Good" : "Bad";
+echo "I Love PHP Because Its A $result Language";
+
+// switch
+$day = "Thu";
+  switch($day) {
+    case "Sat":
+      echo "Hello Today Is $day We Are Open From 10:16";
+      break;
+    case "Sun":
+      echo "Hello Today Is $day We Are Open From 12:18";
+      break;
+    case "Mon":
+    case "Thu":
+      echo "Hello Today Is $day We Are Open From 08:12";
+      break;
+    default:
+      echo "Unknown Day";
+  }
+
+// while loop
+$i = 1;
+  while ($i <= 3) {
+    echo "$i<br>";
+    $i++;
+  }
+  $a5 = 1;
+  while ($a5 <= 3) :
+    echo "$a5<br>";
+    $a5++;
+  endwhile;
+
+// do while 
+$i1 = 4;
+do {
+  echo "$i1<br>";
+  $i1++;
+} while ($i1 <= 3);
+$index = 0;
+while ($index <= 100) {
+  echo "$index<br>";
+  $index += 5;
+}
+
+// for loop
+for ($i2 = 1; $i2 <= 3; $i2++) {
+  echo "$i2<br>";
+}
+echo '##### <br>';
+$index0 = 1;
+for (;;) :
+  if ($index0 == 4) {
+    break;
+  }
+  echo "$index0<br>";
+  $index0++;
+endfor;
+
+// for each 
+$countries = ["EG", "SA", "QA", "SY"];
+  echo '<pre>';
+  print_r($countries);
+  echo '</pre>';
+  foreach ($countries as $country) {
+    echo $country . "<br>";
+  }
+  $countries_with_discount = ["EG" => 50, "SA" => 30, "QA" => 50, "SY" => 70];
+  echo '<pre>';
+  print_r($countries_with_discount);
+  echo '</pre>';
+  foreach ($countries_with_discount as $country => $discount) :
+    echo "Country Name Is $country And Discount Is $discount <br>";
+  endforeach;
+
+  // break , continue
+  foreach (["EG", "SA", "QA", "SY", "USA", "GER"] as $country1) {
+    if ($country1 == "USA") {
+      break;
+    }
+    echo $country1 . "<br>";
+  }
+  echo "########## <br>";
+  foreach (["EG", "SA", "QA", "SY", "USA", "GER"] as $country2) {
+    if ($country2 == "USA") {
+      continue;
+    }
+    echo $country2 . "<br>";
+  }
+
+  // include , require
+  include_once("test.php"); // $a = 10;
+  echo $a . '<br>';
+  $a = 20;
+  include_once("test.php"); // $a = 10;
+  echo $a . '<br>';
+  echo "Continue";
+
+  // function 
+  function say_hello_to($one, $two) {
+    echo "Hello $one $two<br>";
+  }
+  say_hello_to("Osama", "Ahmed");
+  function deep_freezer($item) {
+    if ($item === "Water") {
+      echo "Make Ice <br>";
+    } elseif ($item === "Coca Cola") {
+      echo "Make It Cold <br>";
+    } elseif ($item === "Fruits") {
+      echo "Make It Fresh <br>";
+    } else {
+      echo "Unknown Item";
+    }
+  }
+  deep_freezer("Water");
+  deep_freezer("Coca Cola");
+  deep_freezer("Fruits");
+  deep_freezer("Tv Remote");
+
+  // echo and return 
+  $prizes = ["PC", "Playstation", "XBOX", "Apple TV", "Laptop", "iPad", "iPhone"];
+
+  function get_number($num_one, $num_two) {
+    return $num_one + $num_two;
+    echo "Will Not Echo Anything";
+  }
+  echo $prizes[get_number(2, 1)];
+
+  // Function Default Parameter Value 
+  function get_data($country = "Private Country", $name = "Private", $age = "Private", $address = "Private Address") {
+    // if ($address === "") {
+    //   $address = "Private Address";
+    // }
+    $line_one = "Your Country Is $country And Your Name Is $name <br>";
+    $line_two = "Your Age Is $age And You Live In $address";
+    return $line_one . $line_two;
+  }
+  echo get_data(address: "Cairo");
+
+  //  Anonymous Function
+  function say1_hello_to($someone) {
+    return "Hello $someone";
+  }
+  echo say1_hello_to("Osama");
+  echo '<br>#########<br>';
+  // Anonymous Function In Variable
+  $say2_hello = function() {
+    return "Hello";
+  };
+  echo $say2_hello();
+  echo '<br>#########<br>';
+  // Anonymous Function With Parameter In Variable
+  $say_hola = function($someone) {
+    return "Hola $someone";
+  };
+  echo $say_hola("Osama");
+  echo '<br>#########<br>';
+  // Inherit Variable From Parent Scope
+  $msg = "Hi";
+  $say_hi = function($someone) use ($msg) {
+    return "$msg $someone";
+  };
+  echo $say_hi("Osama");
+  echo '<br>#########<br>';
+  // Pass Anonymous Function To Function => array_map
+  $nums = [10, 20, 30, 40, 50];
+  function add_five($item) {
+    return $item + 5;
+  }
+  $nums_after_adding_five = array_map("add_five", $nums);
+  echo '<pre>';
+  print_r($nums_after_adding_five);
+  echo '</pre>';
+  $nums_after_adding_ten = array_map(function($item) { return $item + 10; }, $nums);
+  echo '<pre>';
+  print_r($nums_after_adding_ten);
+  echo '</pre>';
+
+  // String Access And Update
+  $str = "Elzero";
+  echo "First Letter Is $str[0]<br>";
+  echo "4th Letter Is $str[3]<br>";
+  echo "Number Of Letters " . strlen($str) . "<br>";
+  echo "Last Letter Is $str[-1]<br>";
+  echo "Last Letter Is {$str[strlen($str) - 1]}<br>";
+  echo $str . "<br>";
+  $str[0] = "A";
+  echo $str . "<br>";
+  $str[6] = "A";
+  echo $str . "<br>";
+
+  // string functions
+   /*
+    String Functions
+    - lcfirst(String[Required])
+    - ucfirst(String[Required])
+    - strtolower(String[Required])
+    - strtoupper(String[Required])
+    - ucwords(String[Required], Delimiters[Optional])
+    - str_repeat(String[Required], Count[Required])
+  */
+
+  echo lcfirst("Elzero Web School") . "<br>";
+  echo ucfirst("elzero web school") . "<br>";
+  echo strtolower("ELZERO WEB SCHOOL") . "<br>";
+  echo strtoupper("elzero web school") . "<br>";
+  echo ucwords("elzero web school") . "<br>";
+  echo ucwords("elzero web|school", "|") . "<br>";
+  echo str_repeat("Elzero", 3);
+
+  /*
+    String Functions
+    - implode(Separator[Optional], Array[Required]) => join() Is Alias
+    - explode(Separator[Required], String[Required], Limit[Optional])
+    - str_shuffle(String[Required])
+    - strrev(String[Required])
+    - trim(String[Required], CharsList[Optional])
+    - ltrim(String[Required], CharsList[Optional])
+    - rtrim(String[Required], CharsList[Optional])
+    --- Space ""
+    --- Tab \t
+    --- New Line \n
+    --- Carriage Return \r
+    --- Vertical Tab "\x0B"
+    --- NULL "\0"
+  */
+
+  $friends = ["Ahmed", "Osama", "Ali", "Salem"];
+  echo implode(" ", $friends) . "<br>";
+  echo implode(", ", $friends) . "<br>";
+  echo implode("@@", $friends) . "<br>";
+  echo implode($friends) . "<br>";
+  $str = "Elzero Web School Is Cool";
+  echo "<pre>";
+  print_r(explode(" ", $str));
+  echo "</pre>";
+  echo "<pre>";
+  print_r(explode("I", $str));
+  echo "</pre>";
+  echo "<pre>";
+  print_r(explode(" ", $str, 3));
+  echo "</pre>";
+  echo "<pre>";
+  print_r(explode(" ", $str, -2));
+  echo "</pre>";
+  echo str_shuffle("Elzero") . "<br>";
+  echo strrev("Elzero") . "<br>";
+  echo strlen("   Elzero  ") . "<br>";
+  echo strlen(trim("   Elzero  ")) . "<br>";
+  echo trim("#@@Elzero@@@###", "@") . "<br>";
+  echo rtrim("#@@Elzero@@@###", "#@") . "<br>";
+  echo ltrim("#@@Elzero@@@###", "#@") . "<br>";
+
+  /*
+    String Functions
+    - chunk_split(String[Required], Length[Optional], End[Optional])
+    - strlen(String[Required])
+    - str_split(String[Required], Length[Optional])
+    - strip_tags(String[Required], Allowed[Optional])
+    - nl2br(String[Required], XHTML[Optional])
+  */
+
+  echo chunk_split("Elzero Web School", 3, "@");
+  echo '<br>';
+  echo '<pre>';
+  print_r(str_split("Elzero"));
+  echo '</pre>';
+  echo '<pre>';
+  print_r(str_split("Elzero", 2));
+  echo '</pre>';
+  echo "<h3>Hello <b>Elzero</b></h3>";
+  echo '<br>';
+  echo strip_tags("<h3>Hello <b>Elzero</b></h3>");
+  echo '<br>';
+  echo strip_tags("<h3>Hello <b>Elzero</b></h3>", "<h3><b>");
+  echo '<br>';
+  echo nl2br("Elzero\nWeb\nSchool", false);
+
+  /*
+    String Functions
+    - strpos(String[Required], Value[Required], Start Position[Optional]) Case-Sensitive
+    - strrpos(String[Required], Value[Required], Start Position[Optional]) Case-Sensitive
+    - stripos(String[Required], Value[Required], Start Position[Optional]) Case-Insensitive
+    - strripos(String[Required], Value[Required], Start Position[Optional]) Case-Insensitive
+    - substr_count(String[Required], Value[Required], Start Position[Optional], Length[Optional])
+  */
+
+  var_dump(strpos("Hello Hello", "H")); // 0
+  echo '<br>';
+  var_dump(strpos("Hello Hello", "H", 3)); // 6
+  echo '<br>';
+  var_dump(strpos("Hello Hello", "H", 6)); // 6
+  echo '<br>';
+  var_dump(strpos("Hello Hello", "h")); // False
+  echo '<br>';
+  var_dump(strpos("Hello Hello", "H", -2)); // False
+  echo '<br>';
+  var_dump(strpos("Hello Hello", "H", -5)); // 6
+  echo '<br>';
+  var_dump(strpos("Hello Hello", "H", -11)); // 0
+  echo '<br>';
+  var_dump(strrpos("Hello Hello", "H")); // 6
+  echo '<br>';
+  var_dump(strrpos("Hello Hello", "H", 5)); // 6
+  echo '<br>';
+  var_dump(stripos("Hello Hello", "h")); // 0
+  echo '<br>';
+  var_dump(strripos("Hello Hello", "h")); // 6
+  echo '<br>';
+  var_dump(substr_count("Hello Hello", "He")); // 2
+  echo '<br>';
+  var_dump(substr_count("Hello Hello", "He", 1)); // 1
+  echo '<br>';
+  var_dump(substr_count("Hello Hello", "He", 1, 6)); // 0
+  echo '<br>';
+  var_dump(substr_count("abcdabcda", "abcda")); // 1
+
+  /*
+    String Functions
+    - parse_str(String[Required], Array[Required])
+    - quotemeta(String[Required])
+    - str_pad(String[Required], Length[Required], String[Optional], Pad Flag[Optional])
+    --- STR_PAD_BOTH
+    --- STR_PAD_LEFT
+    --- STR_PAD_RIGHT
+    - strtr(String[Required], From[Required], To[Required]) || strtr(String[Required], Array[Required])
+  */
+
+  parse_str("name=Osama&#038;email=o@nn.sa&#038;os=mac", $query);
+  echo '<pre>';
+  print_r($query);
+  echo '</pre>';
+  echo $query["name"] . "<br>";
+  echo $query["email"] . "<br>";
+  echo $query["os"] . "<br>";
+  echo "Hello [] () * + . <br>";
+  echo quotemeta("Hello [] () * + . <br>");
+  echo str_pad("12", 8, 0, STR_PAD_BOTH) . "<br>";
+  echo str_pad("321", 8, 0, STR_PAD_BOTH) . "<br>";
+  echo str_pad("1313", 8, 0, STR_PAD_LEFT) . "<br>";
+  echo str_pad("15435", 8, 0, STR_PAD_LEFT) . "<br>";
+  echo str_pad("500432", 8, 0, STR_PAD_LEFT) . "<br>";
+  echo strtr("E@zero Web Schoo@", "@", "l");
+  echo "<br>";
+  $translation = ["@" => "l", "#" => "o"];
+  echo strtr("E@zer# Web Sch##@", $translation);
+
+   /*
+    String Functions
+    - str_replace(Find[Required], Replace With[Required], Data[Required], Replace Count[Optional])
+    --- Its Case-Sensitive
+    - str_ireplace(Find[Required], Replace With[Required], Data[Required], Replace Count[Optional])
+  */
+
+  echo str_replace("@", "o", "Elzer@ Web Sch@@l", $r); // Elzero Web School
+  echo '<br>';
+  echo "Replaces Count Is $r"; // 3
+  echo '<br>';
+  echo str_replace(["#", "@"], "A", "E#zer@ Web Sch@@#"); // EAzerA Web SchAAA
+  echo '<br>';
+  echo str_replace(["#", "@"], ["l", "o"], "E#zer@ Web Sch@@#"); // Elzero Web School
+  echo '<pre>';
+  print_r(str_replace("One", 1, ["One", "Two", "Three", "One", "One"]));
+  echo '</pre>';
+  echo '<pre>';
+  print_r(str_replace(["One", "Two"], [1, 2], ["One", "Two", "Three", "One", "One"]));
+  echo '</pre>';
+  echo '<pre>';
+  print_r(str_replace(["One", "Two", "Three"], [1, 2], ["One", "Two", "Three", "One", "One"]));
+  echo '</pre>';
+  echo '<pre>';
+  print_r(str_ireplace(["one", "two"], [1, 2], ["One", "Two", "Three", "One", "One"]));
+  echo '</pre>';
+
+  /*
+    String Functions
+    - substr_replace(String[Required], Replace With Or Insert[Required], Start[Required], Length[$])
+    --- $ Positive Number => Length Of String To Be Replaced
+    --- $ Negative Number => Characters Left At The End After Replacement
+    --- $ 0               => Insert Instead Of Replace
+  */
+
+  echo substr_replace("OneTwo", 1, 0); // 1
+  echo '<br>';
+  echo substr_replace("OneTwo", 1, 3); // One1
+  echo '<br>';
+  echo substr_replace("OneTwo", 1, 5); // OneTw1
+  echo '<br>';
+  echo substr_replace("OneTwo", 1, -1); // OneTw1
+  echo '<br>';
+  echo substr_replace("OneTwo", 2, 2); // On2
+  echo '<br>';
+  echo substr_replace("OneTwo", 2, 2, 2); // On2wo
+  echo '<br>';
+  echo substr_replace("OneTwo", 2, 1, 4); // O2o
+  echo '<br>';
+  echo substr_replace("Elzero_Web_School", "A", 7, 3); // Elzero_A_School
+  echo '<br>';
+  echo substr_replace("Elzero_Web_School", "A", 7, -1); // Elzero_Al eb_School
+  echo '<br>';
+  echo substr_replace("Elzero_Web_School", "A", 7, -3); // Elzero_Aool eb_Sch
+  echo '<br>';
+  echo substr_replace("Elzero_Web_School", "A", 7, -9); // Elzero_Aeb_School
+  echo '<br>';
+  echo substr_replace("Elzero_Web_School", "A", 7, -10); // Elzero_AWeb_School
+  echo '<br>';
+  echo substr_replace("Elzero_Web_School", "@", 1, 0); // E@lzero_Web_School
+  echo "<pre>";
+  print_r(substr_replace(["OneTwo", "ThreeFour"], 1, 0));
+  echo "</pre>";
